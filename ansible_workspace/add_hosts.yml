@@ -1,0 +1,16 @@
+---
+- name: configure ansible hosts
+  hosts: localhost
+  gather_facts: no
+  
+  tasks:
+    - name: create hosts and configuration
+      copy:
+        dest: /home/vagrant/hosts
+        content: |
+          [master]
+          192.168.219.100
+          [worker]
+          192.168.219.11
+          [nfsServer]
+          192.168.219.201      
